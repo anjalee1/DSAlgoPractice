@@ -1,5 +1,7 @@
 
 def print_decrease(n):
+  
+  
   if n==0:
     return
   print(n)
