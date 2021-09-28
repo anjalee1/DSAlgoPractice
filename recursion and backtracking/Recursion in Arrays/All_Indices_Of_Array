@@ -1,1 +1,25 @@
 
+import sys 
+sys.setrecursionlimit(10**6)
+def allIndices(arr,x,idx,fsf):
+    if idx==len(arr):
+        a=[0]*fsf
+        return a
+    if arr[idx]==x:
+        iarr=allIndices(arr,x,idx+1,fsf+1)
+        iarr[fsf]=idx
+        return iarr
+    else:
+        iarr=allIndices(arr,x,idx+1,fsf)
+        return iarr
+n=int(input())
+arr=[]
+for i in range(0,n):
+    arr.append(int(input()))
+x=int(input())
+iarr=allIndices(arr,x,0,0)
+if len(iarr)==0:
+    print()
+    
+for i in range(len(iarr)):
+    print(iarr[i])
