@@ -47,6 +47,5 @@ def process(operators,prefix,postfix):
     postval1=postfix.pop()
     postfix.append(postval1+postval2+op)
 
-exp = list(input())  # taking i/p from user in list['ch']
-
+exp = list(input()) 
 infix(exp)
