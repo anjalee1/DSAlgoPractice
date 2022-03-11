@@ -10,7 +10,7 @@ def operation(ch,v1,v2):
         return v1 / v2
 
 
-def prefix(exp):
+def postfix(exp):
     values=deque()
     infix=deque()
     prefix=deque()
@@ -47,4 +47,4 @@ def prefix(exp):
 
 exp = list(input())
 
-prefix(exp)
+postfix(exp)
