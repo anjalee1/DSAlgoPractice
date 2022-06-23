@@ -1,5 +1,6 @@
 
 https://leetcode.com/problems/rotting-oranges/submissions/
+https://leetcode.com/problems/rotting-oranges/discuss/563686/Python-Clean-and-Well-Explained-(faster-than-greater-90)
 https://www.youtube.com/watch?v=Dq3dGS_0Z6o
   
 from collections import deque
