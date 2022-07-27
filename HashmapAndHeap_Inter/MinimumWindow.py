@@ -1,3 +1,5 @@
+
+#Smallest Substring Of A String Containing All Characters Of Another String 
 from collections import defaultdict
 
 def smallestSubstring(str1,str2):
