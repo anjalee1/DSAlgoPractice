@@ -32,3 +32,4 @@ findNthRoot(x, n)
 
 # Tc=>n*log(x*(10^d))
 # Here d = number of decimals upto which we want accuracy
+#so for ablove code d is 2 (see epsilon value)
