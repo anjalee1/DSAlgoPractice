@@ -6,11 +6,13 @@ class Solution:
             mid=lo+(hi-lo)//2
             if nums[mid]==target:
                 return mid
+            #lo to mid is sorted
             elif nums[mid]>=nums[lo]:
               if target>=nums[lo] and target<nums[mid]:
                 hi=mid-1
               else:
-                lo=mid+1
+               lo=mid+1
+            #mid to high is sorted 
             elif nums[mid]<nums[hi]:
              if target<=nums[hi] and target>nums[mid]:
                 lo=mid+1
