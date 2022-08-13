@@ -1,65 +1,48 @@
-import bisect
+#from bisect import bisect_right as upper_bound
+def BS(r,mid):
+    l = 0
+    h = len(r)- 1
+    while l <= h:
+        m = l + (h - l) // 2
+        if r[m] <= mid:
+            l = m + 1
+        else:
+            h = m - 1
+    return l
 
 
+def getMedian(matrix):
+    r = len(matrix)
+    c = len(matrix[0])
+    s=1
+    e=10**5
+    #for decreasing search  use below for loop 
+#     for i in range(r):
+#         if matrix[i][0] < s:
+#             s = matrix[i][0]
+#         if matrix[i][c - 1] > e:
+#             e = matrix[i][c - 1]
 
-class Solution:
+    desiredcount = (r * c)  // 2
+    while s <= e:
+        mid = s + (e - s) // 2
+        count = 0
+        for i in range(r):
+            count+=BS(matrix[i],mid)
+            #binary search can also be done using bisect_right like below
+            #count+=upper_bound(matrix[i],mid)
 
-    # @param A : list of list of integers
-
-    # @return an integer
-
-    def findMedian(self, A):
-
-        
-
-        temp = []
-
-        
-
-        for i in range(0, len(A)):
-
-            for j in range(0, len(A[0])):
-
-                temp.append(A[i][j])
-
-        
-
-        temp.sort()
-
-        
-
-        return temp[len(temp)//2]
-
-        
-
-        l = 0
-
-        r = 1000*1000*1000
-
-        req = len(A) * len(A[0])
-
-        assert(req % 2);
-
-        while(r - l > 1):
-
-            mid = l + (r - l) / 2
-
-            cnt = 0
-
-            for i in A: 
-
-                #using upper bound in a sorted array to count number of elements smaller than mid
-
-                low = 0
-
-                p = bisect.bisect_right(i, mid)
-
-                cnt += p
-
-            if cnt >= (req/2 +1):
-
-                r = mid
-
-            else:
-
-                l = mid
+        if count <= desiredcount:
+            s = mid + 1
+        else:
+            e = mid - 1
+    return s
+# #bisect_right-The bisect_right() method returns the position on which a new element can be inserted into an already sorted Python list,
+# while maintaining the sorted order. If there are one or more elements present with the same 
+# value as the new value then the insertion point is past the right side of the last such element.
+#tc of bisect_right-O(log(n)), as it is based on the concept of binary search.
+# Time Complexity: O(32 * r * log(c)). The upper bound function will take log(c) time and is performed for each row. And since the numbers will be max of 32 bit, 
+#     so binary search of numbers from min to max will be performed in at most 32 ( log2(2^32) = 32 ) operations. 
+    
+    # for above code tc will be O(35 * r * log(c))
+#Auxiliary Space: O(1) 
