@@ -44,7 +44,7 @@ def getMedian(matrix):
 # Time Complexity: O(32 * r * log(c)). The upper bound function will take log(c) time and is performed for each row. And since the numbers will be max of 32 bit, 
 #     so binary search of numbers from min to max will be performed in at most 32 ( log2(2^32) = 32 ) operations. 
     
-    # for above code tc will be O(35 * r * log(c))
+    # for above code tc will be O(32 * r * log(c))
 #Auxiliary Space: O(1) 
 
 #tutorial video:- https://www.youtube.com/watch?v=tFdBRcHLSGQ
