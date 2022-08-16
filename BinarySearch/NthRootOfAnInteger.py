@@ -33,3 +33,5 @@ findNthRoot(x, n)
 # Tc=>n*log(x*(10^d))
 # Here d = number of decimals upto which we want accuracy
 #so for ablove code d is 2 (see epsilon value)
+#https://www.geeksforgeeks.org/calculating-n-th-real-root-using-binary-search/
+#https://www.youtube.com/watch?v=WjpswYrS2nY&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=64
