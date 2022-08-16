@@ -3,6 +3,9 @@ def findNthRoot(x, n):
 	# Initialize boundary values
 	x = float(x)
 	n = int(n)
+	#If x lies in the range [0, 1) then we set the lower limit low = x and upper limit high = 1, because for this range of numbers the
+       #nth root is always greater than the given number and can never exceed 1.
+
 	if (x >= 0 and x <= 1):
 		low = x
 		high = 1
