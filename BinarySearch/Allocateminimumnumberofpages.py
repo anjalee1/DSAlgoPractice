@@ -46,3 +46,5 @@ if __name__=='__main__':
         
         print(ob.findPages(arr,n,m))
 # } Driver Code Ends
+
+tc=n*log(sum(arr))
