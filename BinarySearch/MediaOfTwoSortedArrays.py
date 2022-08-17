@@ -27,5 +27,4 @@ class Solution:
             elif blm1>al:
                 lo=aleft+1
             
-            #Tutotial video:- https://www.youtube.com/watch?v=nv7F4PiLUzo&t=752s
-            #tc=> o(log2(min(n,m)))
+           
