@@ -47,4 +47,5 @@ if __name__=='__main__':
         print(ob.findPages(arr,n,m))
 # } Driver Code Ends
 
-tc=n*log(sum(arr))
+#tc=n*log(sum(arr))
+#Note: exact same approach can be used for painter's problem
