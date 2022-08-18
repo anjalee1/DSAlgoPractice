@@ -23,3 +23,4 @@ def aggressiveCows(stalls, k):
     return ans
    
 #tc = n*logn+nlog(sum(stalls))
+#tutorial video: https://www.youtube.com/watch?v=YTTdLgyqOLY&t=1135s
