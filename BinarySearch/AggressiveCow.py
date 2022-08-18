@@ -10,10 +10,10 @@ def ispossible(stalls,k,mid):
     return False
 def aggressiveCows(stalls, k):
     # Write your code here.
-    stalls.sort()
+    stalls.sort()#n*logn
     lo=0
     hi=stalls[len(stalls)-1]
-    while lo<=hi:
+    while lo<=hi:#nlog(sum(stalls))
         mid = ((hi-lo)//2)+lo
         if ispossible(stalls,k,mid)==True:
             ans=mid
@@ -22,3 +22,4 @@ def aggressiveCows(stalls, k):
            hi=mid-1
     return ans
    
+#tc = n*logn+nlog(sum(stalls))
