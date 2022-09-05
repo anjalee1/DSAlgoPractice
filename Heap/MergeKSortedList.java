@@ -33,7 +33,7 @@ class Solution {
         return dummyHead.next;
     }
 }
-
+//refer only for tc explanation not solution: https://www.youtube.com/watch?v=kpCesr9VXDA
 //vs:https://www.youtube.com/watch?v=E5WSILx1q0Q
 //ide : https://leetcode.com/problems/merge-k-sorted-lists/
 //Time Complexity: O(nlogk) where n is the total number of nodes and k is the number of lists.
