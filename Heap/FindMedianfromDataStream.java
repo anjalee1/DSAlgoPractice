@@ -31,7 +31,7 @@ class MedianFinder {
               else{
                   int temp=minHeap.peek();//Save root of minheap
                   minHeap.remove(); //Pop the root from minheap
-                  minHeap.add(num);//Push num in minheap
+                  minHeap.add(num);//Push num in minhea
                   maxHeap.add(temp);//Push the previous saved root of minheap in the maxheap
               }
             
@@ -87,7 +87,10 @@ class MedianFinder {
          return median;
     }
 }
-
+//TC: o(nlogn)
+//video: https://www.youtube.com/watch?v=1LkOrc-Le-Y
+//codelink:https://techdose.co.in/median-from-data-stream/
+//ide : https://leetcode.com/problems/find-median-from-data-stream/
 /**
  * Your MedianFinder object will be instantiated and called as such:
  * MedianFinder obj = new MedianFinder();
