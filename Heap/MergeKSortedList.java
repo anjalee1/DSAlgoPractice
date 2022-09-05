@@ -34,5 +34,7 @@ class Solution {
     }
 }
 
+//vs:https://www.youtube.com/watch?v=E5WSILx1q0Q
+//ide : https://leetcode.com/problems/merge-k-sorted-lists/
 //Time Complexity: O(nlogk) where n is the total number of nodes and k is the number of lists.
 //Space Complexity: O(n) to create the new list (or O(1) extra space).
