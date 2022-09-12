@@ -26,3 +26,4 @@ class MyQueue {
 
 //tc:push=>o(1)
   //pop=>o(n)
+https://leetcode.com/problems/implement-queue-using-stacks/discuss/64206/Short-O(1)-amortized-C%2B%2B-Java-Ruby
