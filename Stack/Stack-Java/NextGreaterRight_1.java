@@ -30,3 +30,5 @@ class Solution {
 //video_explanation:https://www.youtube.com/watch?time_continue=949&v=rSf9vPtKcmI
 //code found: https://leetcode.com/problems/next-greater-element-i/discuss/97595/Java-10-lines-linear-time-complexity-O(n)-with-explanation
 //leetcode link: https://leetcode.com/problems/next-greater-element-i/
+
+//note : next smaller left and right ,next greater left : all uses same logic ..just for the left run the first for loop in order and for right run the loop from behind
