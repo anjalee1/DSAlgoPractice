@@ -19,3 +19,5 @@ class StockSpanner {
 //tc:o(n)
 
 //sc:o(n)
+
+//refer to picture in this solution for better understanding: https://leetcode.com/problems/online-stock-span/discuss/640648/Clean-Java-Stack-solution-with-explanation.-90-better-run-time
