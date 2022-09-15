@@ -16,3 +16,6 @@ class StockSpanner {
 }
 
 //leetcode link : https://leetcode.com/problems/online-stock-span/submissions/
+//tc:o(n)
+
+//sc:o(n)
