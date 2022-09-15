@@ -21,3 +21,4 @@ class StockSpanner {
 //sc:o(n)
 
 //refer to picture in this solution for better understanding: https://leetcode.com/problems/online-stock-span/discuss/640648/Clean-Java-Stack-solution-with-explanation.-90-better-run-time
+//tc explanation at 11:54: https://www.youtube.com/watch?v=lGWLBgwd-cw
