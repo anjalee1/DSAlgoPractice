@@ -87,3 +87,6 @@ class Solution {
 // i > 0; //Compare
 // i--; //and decrement
 //https://stackoverflow.com/questions/29429605/what-does-mean-in-java
+
+
+//leetcodelink: https://leetcode.com/problems/rotting-oranges/
