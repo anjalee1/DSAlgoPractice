@@ -38,7 +38,7 @@ class Solution {
                     int rdash=rem.row+dir[i][0];
                     int cdash=rem.col+dir[i][1];
                     
-                    if(rdash>=0 && cdash>= 0 && rdash<grid.length && cdash<grid[0].length                                   && grid[rdash][cdash]==1){
+                    if(rdash>=0 && cdash>= 0 && rdash<grid.length && cdash<grid[0].length && grid[rdash][cdash]==1){
 
                     rotten.add(new pair(rdash,cdash));
                     grid[rdash][cdash]=0;
