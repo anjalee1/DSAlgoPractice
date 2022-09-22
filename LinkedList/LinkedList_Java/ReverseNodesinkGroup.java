@@ -37,12 +37,12 @@ class Solution {
         cur = pre.next;
         nex = cur.next;
         for(int i=1;i<k;i++) {
-            cur.next = nex.next;
-            nex.next = pre.next;
-            pre.next = nex;
-            nex = cur.next;
+            cur.next = nex.next;//intercahnging position with next
+            nex.next = pre.next;//moving to front
+            pre.next = nex; //setting nex next to dummy node
+            nex = cur.next; //moving to next element for reverse 
         }
-        pre = cur;
+        pre = cur; //for next group curr will be pre
         length -= k;
      }
     return dummyHead.next;
