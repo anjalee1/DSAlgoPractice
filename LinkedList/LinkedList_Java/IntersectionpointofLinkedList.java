@@ -52,4 +52,17 @@ public class Solution {
     }
 }
 
+// Time Complexity:
+
+// O(2max(length of list1,length of list2))+O(abs(length of list1-length of list2))+O(min(length of list1,length of list2))
+
+// Reason: Finding the length of both lists takes max(length of list1, length of list2) because it is found simultaneously for both of them. Moving the head pointer ahead by a difference of them. The next one is for searching.
+
+// Space Complexity: O(1)
+
+// Reason: No extra space is used.
+
+
+//Method 2
+
 
