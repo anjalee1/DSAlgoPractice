@@ -16,7 +16,7 @@ def getMedian(matrix):
     c = len(matrix[0])
     s=1
     e=10**5
-    #for decreasing search space use below for loop 
+    #to decrease your search space use below for loop 
 #     for i in range(r):
 #         if matrix[i][0] < s:
 #             s = matrix[i][0]
