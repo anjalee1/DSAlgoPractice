@@ -46,7 +46,7 @@ public class Solution {
 }
 
 
-//tc: O( log( x * 10d)*logguess(n) )
+//tc: O( log( x * 10d)*log(n) )
 //ide: https://www.codingninjas.com/codestudio/problems/1062679?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website&leftPanelTab=0
 //sol vid: https://www.youtube.com/watch?v=WjpswYrS2nY&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=63
 //code expln: https://www.geeksforgeeks.org/calculating-n-th-real-root-using-binary-search/
