@@ -1,7 +1,7 @@
 //video solution : https://www.youtube.com/watch?v=onLoX6Nhvmg&t=484s
 //Time Complexity : O(N^2)
 //Space Complexity : O(3*k)  // k is the no.of triplets
-//ide: 3
+//ide: https://leetcode.com/problems/3sum/
 
 
 class Solution {
