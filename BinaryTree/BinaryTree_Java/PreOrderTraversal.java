@@ -33,3 +33,45 @@ class Solution {
 // Reason: We are traversing N nodes and every node is visited exactly once.
 // Space Complexity: O(N)
 // Reason: Space is needed for the recursion stack. In the worst case (skewed tree), space complexity can be O(N).
+
+//Iterative approach
+// Time Complexity: O(N)
+// Reason: We are traversing N nodes and every node is visited exactly once.
+// Space Complexity: O(N)
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public List<Integer> preorderTraversal(TreeNode root) {
+        
+       List<Integer> list= new ArrayList<>();
+       Stack<TreeNode> st= new Stack<>();
+        st.push(root);
+       while(!st.isEmpty()){
+           TreeNode node =st.pop();
+           list.add(node.val);
+           if(node.right!=null){
+               st.push(node.right);
+           }
+           
+           if(node.left!=null){
+               st.push(node.left);
+           }
+       }
+        
+       return list;
+}
+}
