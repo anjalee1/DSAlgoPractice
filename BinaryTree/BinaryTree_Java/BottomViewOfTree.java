@@ -70,3 +70,9 @@ public class Solution {
         return ans;        
     }
 }
+
+// Time Complexity: O(N)
+// Space Complexity: O(N)
+
+//ide: https://www.codingninjas.com/codestudio/problems/893110?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website&leftPanelTab=0
+//sol: https://www.youtube.com/watch?v=kCQJTAqbExg&t=894s
