@@ -45,7 +45,7 @@ public class Solution {
 	}
 }
 
-
+//When we will come out of the loop we will have the answer which will be equal to low as well as high.
 //tc: O( log( m * 10^d)*log(n) )
 //ide: https://www.codingninjas.com/codestudio/problems/1062679?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website&leftPanelTab=0
 //sol vid: https://www.youtube.com/watch?v=WjpswYrS2nY&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=63
