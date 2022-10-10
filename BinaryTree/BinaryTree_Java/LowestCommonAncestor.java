@@ -32,3 +32,9 @@ class Solution {
          }
     }
 }
+
+// Time complexity: O(N) where n is the number of nodes.
+// Space complexity: O(N), auxiliary space.
+
+//ide:https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+//sol: https://www.youtube.com/watch?v=_-QHfMDde90&feature=emb_imp_woyt
