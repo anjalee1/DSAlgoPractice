@@ -20,7 +20,7 @@ class Solution {
         
         while(low<=high){
             
-            int cut1 = (low+high)/1;
+            int cut1 = (low+high)/2;
             int cut2 = medianPos - cut1;
             
             int l1 = (cut1 == 0)? Integer.MIN_VALUE:nums1[cut1-1];
