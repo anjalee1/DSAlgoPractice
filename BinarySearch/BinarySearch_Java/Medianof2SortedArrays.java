@@ -45,3 +45,57 @@ class Solution {
         
     }
 }
+
+//method 2
+//Time Complexity : O(m+n)
+// Reason – We are still traversing both the arrays linearly.
+// Space Complexity: O(1)
+// Reason – We do not use any extra array.
+
+class Solution {
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int m =nums1.length;
+        int n= nums2.length;
+        int len=m+n;
+        
+        int count=0;
+        int prev =0;
+        int curr =0;
+        
+        int i=0;
+        int j=0;
+        
+        while(count++ <= len/2 ){
+            prev =curr;
+            
+             if(i>= nums1.length) {     // if aIndex >= a length then only use b;
+                curr= nums2[j++];   // update current value and increment bIndex;
+                continue;                
+            } 
+            
+            if(j >= nums2.length ) {    // similar as above,for bIndex
+                curr = nums1[i++];
+                continue;
+            } 
+            
+            if(nums1[i]<nums2[j]){
+                curr=nums1[i++];
+            }
+            
+            else{
+                curr=nums2[j++];
+            }
+        }
+        
+        
+        
+        if(len%2==0){
+            return (double)(prev+curr)/2;     
+        }
+            
+        else{
+            
+            return (double) curr;
+        }
+    }
+}
