@@ -39,7 +39,7 @@ class Solution {
 //sol: https://www.youtube.com/watch?v=12omz-VAyRk
 //https://www.youtube.com/watch?v=UAsLKuEMhsQ&t=89s
 
-//TC: o(n)
+//TC: o(n)  https://www.youtube.com/watch?v=UmJT3j26t1I
 //SC:o(n)Convert Sorted Array to Binary Search Tree
 
 //Binary Search Tree: https://www.programiz.com/dsa/balanced-binary-tree
