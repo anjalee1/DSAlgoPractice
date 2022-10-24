@@ -44,3 +44,4 @@ public class Solution {
 }
 //ide: https://www.codingninjas.com/codestudio/problems/920457?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website
 //sol: https://www.youtube.com/watch?v=KSsk8AhdOZA&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=43
+//tc: o(H) where H= log2N
