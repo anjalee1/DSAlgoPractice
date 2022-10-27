@@ -35,5 +35,25 @@ class Solution {
 //ide: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 //sol: https://www.youtube.com/watch?v=9TJYWh0adfk
 
-//Time Complexity: O(min(K,N))
-//Space Complexity: O(min(K,N))
+
+//iterative 
+
+public int kthSmallest(TreeNode root, int k) {
+     Stack<TreeNode> stack = new Stack<TreeNode>();
+     TreeNode p = root;
+     int count = 0;
+     
+     while(!stack.isEmpty() || p != null) {
+         if(p != null) {
+             stack.push(p);  // Just like recursion
+             p = p.left;   
+             
+         } else {
+            TreeNode node = stack.pop();
+            if(++count == k) return node.val; 
+            p = node.right;
+         }
+     }
+     
+     return Integer.MIN_VALUE;
+ }
