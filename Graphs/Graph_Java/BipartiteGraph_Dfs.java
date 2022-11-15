@@ -29,6 +29,6 @@ class Solution {
 //ide:https://leetcode.com/problems/is-graph-bipartite/
 //sol:https://www.youtube.com/watch?v=KG5YFfR0j8A&list=PLgUwDviBIf0oE3gA41TKO2H5bHpPd7fzn&index=19
 //https://takeuforward.org/data-structure/bipartite-check-using-dfs-if-graph-is-bipartite/
-
+//https://leetcode.com/problems/is-graph-bipartite/discuss/115487/Java-Clean-DFS-solution-with-Explanation
 // Time Complexity: O(V + E), since in its whole, it is a DFS implementation, V – vertices; E – edges;
 // Space Complexity: O(V), because, apart from the graph, we maintain a color array.
