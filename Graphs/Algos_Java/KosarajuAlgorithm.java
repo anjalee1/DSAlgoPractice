@@ -33,9 +33,9 @@ public class Solution {
     }
 
     
-    public static List<List<Integer>> stronglyConnectedComponents(int n, int[][] edges) {
+   public static List<List<Integer>> stronglyConnectedComponents(int n, int[][] edges) {
         
-ArrayList<ArrayList<Integer> > adj = new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer> > adj = new ArrayList<ArrayList<Integer>>();
         
         //create adjacency list from edges
         for (int i = 0; i < n; i++) {
@@ -54,7 +54,9 @@ ArrayList<ArrayList<Integer> > adj = new ArrayList<ArrayList<Integer>>();
                 dfs(i, st, adj, vis); 
             }
         }
-        
+       
+       
+        //create transpose graph 
         ArrayList<ArrayList<Integer> > transpose = new ArrayList<ArrayList<Integer> >();
         
         for (int i = 0; i < n; i++) 
@@ -66,6 +68,7 @@ ArrayList<ArrayList<Integer> > adj = new ArrayList<ArrayList<Integer>>();
                 transpose.get(it).add(i); 
             }
         }
+       
 
         while(st.size() > 0) {
             int node = st.peek(); 
