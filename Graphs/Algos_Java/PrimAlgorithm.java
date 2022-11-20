@@ -4,7 +4,8 @@
 //sol: https://www.youtube.com/watch?v=mJcZjjKzeqk&list=PLgUwDviBIf0oE3gA41TKO2H5bHpPd7fzn&index=45
 //https://takeuforward.org/data-structure/minimum-spanning-tree-mst-using-prims-algo/
 
-
+// Time Complexity: O(NlogN). N iterations and logN for priority queue
+// Space Complexity: O(N). Three arrays and priority queue
 
 
 //{ Driver Code Starts
