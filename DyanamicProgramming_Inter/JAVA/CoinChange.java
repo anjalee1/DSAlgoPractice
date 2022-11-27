@@ -2,33 +2,9 @@ Time Complexity: O(N*T)
 Reason: There are two nested loops.
 Space Complexity: O(T)
 Reason: We are using an external array of size ‘T+1’ to store two rows only.
-//ide: 
+//ide: https://practice.geeksforgeeks.org/problems/coin-change2448/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article
+    
+//sol:https://www.youtube.com/watch?v=l_nR5X9VmaI
 
 
 
-class Solution {
-    public int coinChange(int[] coins, int amount) {
-        
-        if (amount == 0) {
-            return 0;
-        }
-        if (coins == null || coins.length == 0 || amount < 0) {
-            return -1;
-        }
-
-        int[] dp = new int[amount + 1];
-        Arrays.fill(dp, Integer.MAX_VALUE);
-        dp[0] = 0;
-
-        for (int c : coins) {
-            for (int i = c; i <= amount; i++) {
-                if (dp[i - c] != Integer.MAX_VALUE) {
-                    dp[i] = Math.min(dp[i], dp[i - c] + 1);
-                }
-            }
-        }
-
-        return dp[amount] == Integer.MAX_VALUE ? -1 : dp[amount];
-        
-    }
-}
