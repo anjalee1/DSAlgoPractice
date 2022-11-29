@@ -31,5 +31,5 @@ class Solution {
 //ide:https://leetcode.com/problems/word-break/
 //sol:https://www.youtube.com/watch?v=2NaaM_z_Jig&t=111s
 
-//tc:o(n^2)
+//tc:o(n^3)
 //sc:o(n)
