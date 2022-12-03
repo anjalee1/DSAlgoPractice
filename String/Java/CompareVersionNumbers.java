@@ -27,15 +27,15 @@ class Solution {
 
 
 //ide:https://leetcode.com/problems/compare-version-numbers/
-//sol: https://www.youtube.com/watch?v=MTSetP6kcRI
-//https://leetcode.com/problems/compare-version-numbers/discuss/1797472/Java-Concise-Solution
+//sol: https://leetcode.com/problems/compare-version-numbers/discuss/50939/JAVA-Iterative-Easy-to-understand-Beat-92-solution
 
 //tc: o(max(v1,v2))
 //sc: o(1)
 
 
 //with split
-
+//sol: https://www.youtube.com/watch?v=MTSetP6kcRI
+//https://leetcode.com/problems/compare-version-numbers/discuss/1797472/Java-Concise-Solution
 public int compareVersion(String version1, String version2) {
         String[] str1 = version1.split("\\.");
         String[] str2 = version2.split("\\.");
