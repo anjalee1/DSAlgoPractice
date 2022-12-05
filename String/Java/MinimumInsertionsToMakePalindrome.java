@@ -1,3 +1,5 @@
+//for long subsequnce -ide:https://leetcode.com/problems/longest-palindromic-subsequence/
+                       //sol: https://www.youtube.com/watch?v=RiNzHfoA2Lo&t=2379s
 
 //ide: https://practice.geeksforgeeks.org/problems/form-a-palindrome2544/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article
 //sol: https://www.youtube.com/watch?v=IP4iqrh0mQk&t=199s
