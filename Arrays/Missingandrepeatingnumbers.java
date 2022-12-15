@@ -1,3 +1,6 @@
+
+/////refer: https://www.codingninjas.com/codestudio/library/find-the-leftmost-and-rightmost-set-bit-of-a-number
+
 ///////////xor method
 //{ Driver Code Starts
 // Initial Template for Java
@@ -152,7 +155,6 @@ class Solve {
     return res;
     }
 }
-
 
 
 
