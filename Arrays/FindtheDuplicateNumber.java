@@ -22,3 +22,4 @@ class Solution {
 
 //ide: https://leetcode.com/problems/find-the-duplicate-number/description/
 //sol: https://www.youtube.com/watch?v=32Ll35mhWg0&list=PLgUwDviBIf0rPG3Ictpu74YWBQ1CaBkm2&index=3
+//https://takeuforward.org/data-structure/find-the-duplicate-in-an-array-of-n1-integers/
