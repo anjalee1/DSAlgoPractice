@@ -3,7 +3,7 @@
 //sol:https://www.youtube.com/watch?v=dBGUmUQhjaM&list=PLgUwDviBIf0pcIDCZnxhv0LkHf5KzG9zp
 //https://takeuforward.org/data-structure/implement-trie-1/
 
-//tc: o(length of the string)
+//tc: o(length of the string) for insert ,search,startswith
 //sc:
 
 
