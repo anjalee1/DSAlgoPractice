@@ -1,6 +1,6 @@
 //ide :https://leetcode.com/problems/longest-common-prefix/
 //sol:https://www.youtube.com/watch?v=Q8LhG9Pi5KM&list=PLgUwDviBIf0pcIDCZnxhv0LkHf5KzG9zp&index=9
-//tc:qlogq+o(q*32+n*#2)+nlogn
+//tc:qlogq+o(q*32+n*32)+nlogn
 
 
 
