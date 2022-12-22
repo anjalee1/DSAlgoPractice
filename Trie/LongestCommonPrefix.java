@@ -1,6 +1,6 @@
 //ide: https://leetcode.com/problems/longest-common-prefix/
-//sol:https://www.youtube.com/watch?v=fhyIORFDD0k&t=3s
-
+//sol:https://www.youtube.com/watch?v=VTr3Nh7BadI&t=901s
+//https://leetcode.com/problems/longest-common-prefix/solutions/127449/longest-common-prefix/
 //tc:o(no of strings * length of string)
 
 
