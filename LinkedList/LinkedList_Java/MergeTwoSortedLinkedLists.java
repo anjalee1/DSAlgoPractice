@@ -38,5 +38,6 @@ class Solution {
 }
 
 //tc: o(m+n)
+//Space Complexity :We are using the same lists just changing links to create our desired list. So no extra space is used. Hence, its space complexity is O(1). 
 // leetcode link:https://leetcode.com/problems/merge-two-sorted-lists/ 
 //solution video : https://www.youtube.com/watch?v=mBUcaPvEawI&t=3s
