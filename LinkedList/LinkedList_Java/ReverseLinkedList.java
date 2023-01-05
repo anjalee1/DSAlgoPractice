@@ -1,3 +1,8 @@
+//ide: https://leetcode.com/problems/reverse-linked-list/
+//sol: https://takeuforward.org/data-structure/reverse-a-linked-list/
+//https://takeuforward.org/data-structure/reverse-a-linked-list/
+
+
 
 /**
  * Definition for singly-linked list.
