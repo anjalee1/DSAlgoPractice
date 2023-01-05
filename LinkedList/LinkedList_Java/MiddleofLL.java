@@ -1,4 +1,11 @@
 
+//ide: https://leetcode.com/problems/middle-of-the-linked-list/
+//sol:https://www.youtube.com/watch?v=sGdwSH8RK-o&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=29
+//https://takeuforward.org/data-structure/find-middle-element-in-a-linked-list/
+//tc: o(n/2)
+//sc:o(1)
+
+
 class Solution {
     public ListNode middleNode(ListNode head) {
         
