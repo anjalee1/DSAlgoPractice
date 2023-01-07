@@ -1,4 +1,7 @@
-//Method 1-difference method
+//ide:https://leetcode.com/problems/intersection-of-two-linked-lists/description/
+//sol:https://www.youtube.com/watch?v=u4FWXfgS8jw&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=36
+//https://takeuforward.org/data-structure/find-intersection-of-two-linked-lists/
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -10,6 +13,64 @@
  *     }
  * }
  */
+
+//method-1  ---BruteForce 
+//tc:o(m*n)
+//sc:o(1)
+
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+       if(headA ==null || headB ==null) return null;
+       while(headA != null){
+            ListNode temp = headB;
+            while (temp!=null){
+                if(headA==temp){
+                    return headA;
+                }
+                temp= temp.next;
+            }
+            headA=headA.next;
+       }  
+       return null;
+      
+ }
+}
+
+//notes:
+//headB is stored in temp but headA is not because headA is being iterated only once but headB is being iterated 
+//again and again and not storing in temp will change the original value 
+
+//Method 2 : Hashing
+
+//tc: o(m+n)
+//sc:o(m)
+
+
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+       if(headA ==null || headB ==null) return null;
+        HashSet<ListNode> set = new HashSet<>();
+
+        while(headA != null){
+            set.add(headA);  
+            headA=headA.next;
+       }
+
+       while(headB!=null){
+           if(set.contains(headB)){
+               return headB;
+           }
+           headB=headB.next;
+
+       }
+
+       return null;
+    }
+}
+
+
+//Method 3-difference method
+
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         
@@ -63,7 +124,7 @@ public class Solution {
 // Reason: No extra space is used.
 
 
-//Method 2
+//Method 4
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         
@@ -79,5 +140,5 @@ public class Solution {
  }
 }
 
-//tc and sc are same as first method
+//tc and sc are same as third method
 
