@@ -5,7 +5,9 @@
 //tc: o(n/2)
 //sc:o(1)
 
-
+//fast.next!=null  => for odd
+//fast != null for even and when second node of two mid is required
+//fast.next.next != null for even and when first node of two mid is required
 class Solution {
     public ListNode middleNode(ListNode head) {
         
