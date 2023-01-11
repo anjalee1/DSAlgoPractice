@@ -1,4 +1,4 @@
-
+//intution by gfg: https://www.geeksforgeeks.org/find-first-node-of-loop-in-a-linked-list/
 //ide: https://leetcode.com/problems/linked-list-cycle-ii/
 
 //video sol: https://www.youtube.com/watch?v=QfbOhn0WZ88&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=44
