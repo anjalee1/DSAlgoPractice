@@ -1,3 +1,5 @@
+
+//ide: https://leetcode.com/problems/missing-number/
 //method -1  binary serach : tc : nlogn  sc =o(1)
 
 class Solution {
