@@ -6,6 +6,18 @@
  //ide: https://www.codingninjas.com/codestudio/problems/sort-a-stack_985275?leftPanelTab=1
   //video- 6th que :https://www.youtube.com/watch?v=BmZnJehDzyU&t=3017
  // tc expanation: https://www.enjoyalgorithms.com/blog/sort-stack-using-temporary-stack
+//
+
+// Expand it!
+
+// T(n) = T(n-1) + n = T(n-2) + (n-1) + n = T(n-3) + (n-2) + (n-1) + n
+
+// and so on, until
+
+// T(n) = 1 + 2 + ... + n = n(n+1)/2   [= O(n^2)]
+
+// provided that T(1) = 1
+
 import java.util.*;
 
 public class Solution {
