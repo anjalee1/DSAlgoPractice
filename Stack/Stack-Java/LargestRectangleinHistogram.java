@@ -1,3 +1,5 @@
+//ide:https://leetcode.com/problems/largest-rectangle-in-histogram/description/
+//sol:https://www.youtube.com/watch?v=0do2734xhnU&t=2s
 
 class Solution {
     public int largestRectangleArea(int[] heights) {
