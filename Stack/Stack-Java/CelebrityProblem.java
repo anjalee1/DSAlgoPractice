@@ -33,6 +33,6 @@ public class Solution {
 }
 
 //solution video:nsoluhttps://www.youtube.com/watch?v=CiiXBvrX-5A&t=7s
-//ide: https://www.codingninjas.com/codestudio/problems/the-celebrity-problem_982769?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website&leftPanelTab=0
+//ide: https://practice.geeksforgeeks.org/problems/the-celebrity-problem/1
 //tc:o(N)
 //sc:o(N)
