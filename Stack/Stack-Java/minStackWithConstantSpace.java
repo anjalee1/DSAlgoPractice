@@ -1,4 +1,5 @@
-
+//ide: https://leetcode.com/problems/min-stack/
+//sol: https://www.youtube.com/watch?v=Trz7JM610Uc&t=4s
 class MinStack {
     Stack<Long> st;
     long min;
