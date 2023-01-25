@@ -1,4 +1,5 @@
-
+//ide:https://leetcode.com/problems/min-stack/
+//sol:https://www.youtube.com/watch?v=4bjCEJmiPZA
 class MinStack {
     Stack<Integer> as;
     Stack<Integer> min;
