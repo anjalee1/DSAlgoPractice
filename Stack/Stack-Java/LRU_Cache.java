@@ -89,4 +89,5 @@ class LRUCache {
  * tc of put and get in hashmap is o(1)
  * tc of add and remove in double ll is o(1)
  *https://www.youtube.com/watch?v=JxtmaAFfVBo&t=3678s
+ https://leetcode.com/problems/lru-cache/
  */
