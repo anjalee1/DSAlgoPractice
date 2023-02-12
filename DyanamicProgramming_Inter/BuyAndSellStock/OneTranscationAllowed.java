@@ -3,6 +3,8 @@
 //tc:o(n)
 //sc:o(1)
 
+//https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/solutions/1569081/java-simple-clean-dp-solutions-for-all-6-buy-sell-stock-questions-on-leetcode/?orderBy=most_votes
+
 class Solution {
     public int maxProfit(int[] prices) {
        int n=prices.length;
