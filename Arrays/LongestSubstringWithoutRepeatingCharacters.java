@@ -15,10 +15,8 @@ class Solution {
         int n = s.length();
         int len = 0;
         while (right < n) {
-            if (mpp.containsKey(s.charAt(right))) left = Math.max(mpp.get(s.charAt(right)) + 1, left);
-
+            if (mpp.containsKey(s.charAt(right))) left = Math.max(mpp.get(s.charAt(right)) + 1, left); // dry run "abba" to understand Math.max() is used
             mpp.put(s.charAt(right), right);
-
             len = Math.max(len, right - left + 1);
             right++;
         }
