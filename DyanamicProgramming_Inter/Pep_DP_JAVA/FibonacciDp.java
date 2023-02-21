@@ -1,3 +1,5 @@
+//ide:https://leetcode.com/problems/fibonacci-number/
+//sol:https://www.youtube.com/watch?v=94dfRrDANRY&t=6s
 
 //recursion : tc: 2^n ,sc:o(n)
 
