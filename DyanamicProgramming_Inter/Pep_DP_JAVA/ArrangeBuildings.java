@@ -1,7 +1,7 @@
 //ide:https://nados.io/question/arrange-buildings
 //sol: https://www.youtube.com/watch?time_continue=1&v=0nF-BMYy7tc
 
-//tc:o(n
+//tc:o(n)
 //sc:o(n)
 
 
