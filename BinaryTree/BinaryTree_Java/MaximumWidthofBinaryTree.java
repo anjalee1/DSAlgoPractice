@@ -1,3 +1,6 @@
+//IDE: https://leetcode.com/problems/maximum-width-of-binary-tree/
+//SOL: https://www.youtube.com/watch?v=R9qiY7OK9JQ
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
