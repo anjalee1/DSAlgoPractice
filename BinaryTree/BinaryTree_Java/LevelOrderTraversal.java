@@ -1,3 +1,4 @@
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -41,3 +42,6 @@ class Solution {
 
     }
 }
+
+//ide:https://leetcode.com/problems/binary-tree-level-order-traversal/
+//sol:https://www.youtube.com/watch?v=EoAsWbO7sqg
