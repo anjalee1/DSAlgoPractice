@@ -1,8 +1,6 @@
 
 //ide:https://practice.geeksforgeeks.org/problems/distance-from-the-source-bellman-ford-algorithm/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=distance-from-the-source-bellman-ford-algorithm
 //sol:https://www.youtube.com/watch?v=IjEX4rgxsvI&t=334s
-//https://www.youtube.com/watch?v=IjEX4rgxsvI&t=334s
-
 //tc:o(V*E)
 //sc:o(V)
 
