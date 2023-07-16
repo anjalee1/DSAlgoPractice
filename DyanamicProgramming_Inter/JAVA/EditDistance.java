@@ -6,7 +6,9 @@
 // Space Complexity: O(N*M)
 // Reason: We are using an external array of size ‘N*M’. Stack Space is eliminated.
 
-
+D=I-1,J
+R=i-1,j-1
+I=i,j-1
 
 class Solution {
     public int minDistance(String word1, String word2) {
