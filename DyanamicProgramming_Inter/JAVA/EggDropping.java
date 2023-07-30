@@ -1,6 +1,8 @@
 //ide: https://leetcode.com/problems/super-egg-drop/
 //sol: https://www.youtube.com/watch?v=UvksR0hR9nA
-//https://leetcode.com/problems/super-egg-drop/discuss/2999392/Java(DP)-Solution-with-explanation
+//https://leetcode.com/problems/super-egg-drop/discuss/2999392/Java(DP)-Solution-with-
+//https://leetcode.com/problems/super-egg-drop/discuss/1960138/java-solution
+
 //tc:
 //sc: 
 
