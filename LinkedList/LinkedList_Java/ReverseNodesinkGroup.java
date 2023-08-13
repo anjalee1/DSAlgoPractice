@@ -48,3 +48,6 @@ class Solution {
     return dummyHead.next;
     }
 }
+
+// https://leetcode.com/problems/reverse-nodes-in-k-group/
+// https://www.youtube.com/watch?v=Of0HPkk3JgI
