@@ -1,0 +1,19 @@
+The equation you provided is used to find the rightmost (lowest) set bit in the binary representation of the integer `xor1`. Let's break down the equation step by step:
+
+1. `xor1` is a variable that presumably contains some integer value.
+
+2. `xor1 - 1` subtracts 1 from `xor1`. This operation has the effect of flipping all the bits from the rightmost set bit up to and including that set bit. For example, if `xor1` is `11010010`, then `xor1 - 1` becomes `11010001`.
+
+3. `~(xor1 - 1)` negates the result of `xor1 - 1`. This operation changes all the 0s to 1s and vice versa. So, if `xor1 - 1` is `11010001`, then `~(xor1 - 1)` becomes `00101110`.
+
+4. `xor1 & ~(xor1 - 1)` performs a bitwise AND operation between `xor1` and `~(xor1 - 1)`. This operation results in a number where all bits are 0 except for the rightmost set bit in `xor1`. In other words, it isolates the rightmost set bit of `xor1` and sets all other bits to 0.
+
+Let's illustrate this with an example:
+
+Suppose `xor1` is `11010010` in binary.
+
+1. `xor1 - 1` is `11010001`.
+2. `~(xor1 - 1)` is `00101110`.
+3. `xor1 & ~(xor1 - 1)` is `11010010 & 00101110`, which equals `00000010`.
+
+So, the result of the equation is `00000010`, which represents the rightmost set bit in the binary representation of `xor1`. In this case, the rightmost set bit in `xor1` is the second bit from the right.
