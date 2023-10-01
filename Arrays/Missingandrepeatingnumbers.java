@@ -1,4 +1,4 @@
-
+https://www.geeksforgeeks.org/find-the-repeating-and-the-missing-number-using-two-equations/
 /////refer: https://www.codingninjas.com/codestudio/library/find-the-leftmost-and-rightmost-set-bit-of-a-number
 
 ///////////xor method
