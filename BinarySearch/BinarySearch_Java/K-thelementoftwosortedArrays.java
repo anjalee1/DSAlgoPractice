@@ -38,3 +38,78 @@ public class Solution {
     return -1;
     }
 }
+Yes, shifting a bit number one place to the right results in halving that number in decimal. This is because shifting a binary number one place to the right is equivalent to dividing the number by 2 in decimal.
+
+In binary arithmetic, shifting a number to the right by one position effectively divides it by 2. Here's why:
+
+Each bit in a binary number represents a power of 2, starting from 
+2
+0
+2 
+0
+  (least significant bit) to higher powers as you move left.
+Shifting all bits to the right by one position moves each bit one place lower, effectively dividing the entire number by 2.
+For example, let's take the binary number 
+110
+1
+2
+1101 
+2
+
+ :
+
+Shifting 
+110
+1
+2
+1101 
+2
+
+  to the right by one position gives 
+011
+0
+2
+0110 
+2
+
+ .
+In decimal, 
+110
+1
+2
+=
+13
+1101 
+2
+
+ =13 and 
+011
+0
+2
+=
+6
+0110 
+2
+
+ =6.
+13
+÷
+2
+=
+6.5
+13÷2=6.5, confirming that shifting 
+110
+1
+2
+1101 
+2
+
+  right by one position indeed results in halving the decimal value.
+Therefore, shifting a bit number one place to the right results in half of that number in decimal.
+
+
+
+Don't share sensitive info. Chats may be reviewed and used to train our models. Learn more
+
+
+ChatGPT c
