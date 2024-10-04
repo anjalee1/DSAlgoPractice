@@ -3,7 +3,7 @@
 //Space Complexity: O(N)
 //Reason: Space is needed for the recursion stack while adding leaves. In the worst case (skewed tree), space complexity can be O(N).
 
-//ide: https://www.codingninjas.com/codestudio/problems/boundary-traversal_790725?leftPanelTab=0
+//ide: https://www.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1
 //sol: https://www.youtube.com/watch?v=0ca1nvR0be4
 //https://takeuforward.org/data-structure/boundary-traversal-of-a-binary-tree/
 
