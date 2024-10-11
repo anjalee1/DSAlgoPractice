@@ -2,7 +2,7 @@
 
 
 //ide:https://leetcode.com/problems/search-a-2d-matrix/description/
-//sol:https://www.youtube.com/watch?v=kQ1mJlwW-c0
+//sol:https://www.youtube.com/watch?v=JXU4Akft7yk
 //https://takeuforward.org/data-structure/count-inversions-in-an-array/
 
 //Time complexity: O(log(m*n))
