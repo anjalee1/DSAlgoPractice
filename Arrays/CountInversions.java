@@ -40,56 +40,54 @@ class Sorting
 
 //User function Template for Java
 
-class Solution
-{
-    static long merge(long arr[],long temp[],long left,long mid,long right)
-    {
-        long inv_count=0;
-        long i = left;
-        long j = mid;
-        long k = left;
-        while((i <= mid-1) && (j <= right)){
-            if(arr[(int)i] <= arr[(int)j]){
-                temp[(int)k++] = arr[(int)i++];
-            }
-            else
-            {
-                temp[(int)k++] = arr[(int)j++];
-                inv_count = inv_count + (mid - i);
+class Solution {
+
+    static long merge(long arr[], long left, long mid, long right) {
+        long inv_count = 0;
+        int i = (int)left;
+        int j = (int)(mid + 1);
+        ArrayList<Long> temp = new ArrayList<>();
+
+        // Merge two halves and count inversions
+        while (i <= (int)mid && j <= (int)right) {
+            if (arr[i] <= arr[j]) {
+                temp.add(arr[i++]);
+            } else {
+                temp.add(arr[j++]);
+                inv_count += (mid - i + 1);
             }
         }
-    
-        while(i <= mid - 1)
-            temp[(int)k++] = arr[(int)i++];
-    
-        while(j <= right)
-            temp[(int)k++] = arr[(int)j++];
-    
-        for(i = left ; i <= right ; i++)
-            arr[(int)i] = temp[(int)i];
-        
-        return inv_count;
-    }
-    
-    static long merge_Sort(long arr[],long temp[],long left,long right)
-    {
-        long mid,inv_count = 0;
-        if(right > left)
-        {
-            mid = (left + right)/2;
-    
-            inv_count += merge_Sort(arr,temp,left,mid);
-            inv_count += merge_Sort(arr,temp,mid+1,right);
-    
-            inv_count += merge(arr,temp,left,mid+1,right);
+
+        // Copy remaining elements from left half
+        while (i <= (int)mid) {
+            temp.add(arr[i++]);
         }
+
+        // Copy remaining elements from right half
+        while (j <= (int)right) {
+            temp.add(arr[j++]);
+        }
+
+        // Copy the sorted elements back into the original array
+        for (int k = (int)left; k <= (int)right; k++) {
+            arr[k] = temp.get(k - (int)left); // Ensure correct index calculation
+        }
+
         return inv_count;
     }
 
-    static long inversionCount(long arr[], long N)
-    {
-        long[] temp = new long[(int)N];
-        long ans = merge_Sort(arr,temp,0,N-1);
-        return ans;
+    static long mergeSort(long[] nums, long low, long high) {
+        if (low >= high) return 0;
+        long mid = (low + high) / 2;
+        long inv = mergeSort(nums, low, mid);
+        inv += mergeSort(nums, mid + 1, high);
+        inv += merge(nums, low, mid, high);
+        return inv;
     }
+
+    static long inversionCount(long arr[]) {
+        return mergeSort(arr, 0, arr.length - 1);
+    }
+
+
 }
