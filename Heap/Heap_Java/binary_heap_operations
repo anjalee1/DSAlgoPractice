@@ -1,0 +1,182 @@
+Binary Heap Operations, Functions, and Time Complexities
+A Binary Heap is a complete binary tree that satisfies the heap property:
+
+Max Heap: Each parent node is greater than or equal to its children.
+Min Heap: Each parent node is less than or equal to its children.
+Here's a detailed list of the key operations, along with their implementations, explanations, and time complexities.
+
+1. Insertion (insert)
+Time Complexity: O(log n)
+Explanation:
+
+Insert the new element at the end of the heap (maintaining the complete binary tree structure).
+Perform a heapify-up (bubble-up) process to restore the heap property.
+The maximum number of levels you may need to move up is the height of the tree, which is log n.
+Implementation:
+java
+Copy code
+public void insert(int value) {
+    heap.add(value); // Add the value to the end of the list
+    int current = heap.size() - 1;
+
+    // Heapify-up process
+    while (current > 0 && heap.get(current) > heap.get((current - 1) / 2)) {
+        swap(current, (current - 1) / 2);
+        current = (current - 1) / 2;
+    }
+}
+2. Extract Maximum/Minimum (extractMax / extractMin)
+Time Complexity: O(log n)
+Explanation:
+
+Remove the root element (which is the max or min).
+Replace the root with the last element in the heap.
+Perform a heapify-down (sift-down) process to restore the heap property.
+Implementation:
+java
+Copy code
+public int extractMax() {
+    if (heap.isEmpty()) return Integer.MIN_VALUE;
+    int max = heap.get(0);
+    int lastElement = heap.remove(heap.size() - 1);
+    if (!heap.isEmpty()) {
+        heap.set(0, lastElement);
+        heapifyDown(0);
+    }
+    return max;
+}
+
+private void heapifyDown(int index) {
+    int largest = index;
+    int left = 2 * index + 1;
+    int right = 2 * index + 2;
+
+    if (left < heap.size() && heap.get(left) > heap.get(largest)) largest = left;
+    if (right < heap.size() && heap.get(right) > heap.get(largest)) largest = right;
+
+    if (largest != index) {
+        swap(index, largest);
+        heapifyDown(largest);
+    }
+}
+3. Peek (Get Maximum/Minimum)
+Time Complexity: O(1)
+Explanation:
+
+Simply return the root element (heap[0]).
+No reordering or shifting is required.
+Implementation:
+java
+Copy code
+public int peekMax() {
+    if (heap.isEmpty()) return Integer.MIN_VALUE;
+    return heap.get(0);
+}
+4. Delete an Element (delete)
+Time Complexity: O(log n)
+Explanation:
+
+Find the index of the element to delete.
+Replace it with the last element, then remove the last element.
+Perform a heapify-up or heapify-down operation to restore the heap property.
+Implementation:
+java
+Copy code
+public void delete(int index) {
+    if (index < 0 || index >= heap.size()) return;
+    int lastElement = heap.remove(heap.size() - 1);
+    if (index < heap.size()) {
+        heap.set(index, lastElement);
+        heapifyDown(index);
+        heapifyUp(index);
+    }
+}
+
+private void heapifyUp(int index) {
+    while (index > 0 && heap.get(index) > heap.get((index - 1) / 2)) {
+        swap(index, (index - 1) / 2);
+        index = (index - 1) / 2;
+    }
+}
+5. Heapify an Unsorted Array (buildHeap)
+Time Complexity: O(n)
+Explanation:
+
+Convert an unsorted array into a heap.
+Start from the last non-leaf node and apply heapifyDown() on each node.
+The time complexity is O(n), not O(n log n), because each level takes progressively less time to heapify.
+Implementation:
+java
+Copy code
+public void buildHeap(List<Integer> array) {
+    this.heap = array;
+    for (int i = heap.size() / 2 - 1; i >= 0; i--) {
+        heapifyDown(i);
+    }
+}
+6. Heap Sort
+Time Complexity: O(n log n)
+Explanation:
+
+Repeatedly extract the maximum (or minimum) element and rebuild the heap.
+This effectively sorts the array in ascending (or descending) order.
+Implementation:
+java
+Copy code
+public List<Integer> heapSort() {
+    List<Integer> sortedList = new ArrayList<>();
+    while (!heap.isEmpty()) {
+        sortedList.add(extractMax());
+    }
+    return sortedList;
+}
+7. Increase Key / Decrease Key
+Time Complexity: O(log n)
+Explanation:
+
+Increase or decrease the value of a specific element.
+Perform heapify-up if the value is increased, or heapify-down if it's decreased.
+Implementation:
+java
+Copy code
+public void increaseKey(int index, int newValue) {
+    if (newValue < heap.get(index)) return; // Invalid operation
+    heap.set(index, newValue);
+    heapifyUp(index);
+}
+
+public void decreaseKey(int index, int newValue) {
+    if (newValue > heap.get(index)) return; // Invalid operation
+    heap.set(index, newValue);
+    heapifyDown(index);
+}
+8. Change Key (Update Value)
+Time Complexity: O(log n)
+Explanation:
+
+Update the value of an element at a given index.
+Decide whether to heapify-up or heapify-down based on the new value.
+Implementation:
+java
+Copy code
+public void changeKey(int index, int newValue) {
+    int oldValue = heap.get(index);
+    heap.set(index, newValue);
+    if (newValue > oldValue) {
+        heapifyUp(index);
+    } else {
+        heapifyDown(index);
+    }
+}
+Summary Table of Operations and Their Time Complexities
+Operation	Description	Time Complexity
+insert	Insert a new element	O(log n)
+extractMax / extractMin	Remove the max/min element	O(log n)
+peekMax / peekMin	Get the max/min element without removing it	O(1)
+delete	Remove a specific element	O(log n)
+buildHeap	Build a heap from an unsorted array	O(n)
+heapSort	Sort an array using the heap	O(n log n)
+increaseKey / decreaseKey	Increase or decrease the value of an element	O(log n)
+changeKey	Change the value of an element	O(log n)
+a. Would you like a detailed explanation of any specific function?
+b. Need help with converting these implementations into a Min Heap?
