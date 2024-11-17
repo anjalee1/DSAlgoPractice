@@ -118,3 +118,11 @@ class PriorityQueueUsingHeap {
         System.out.println("Is empty? " + pq.isEmpty());
     }
 }
+
+// Time Complexity Analysis
+// Operation	Time Complexity
+// insert()	O(log n)
+// extractMax()	O(log n)
+// peek()	O(1)
+// isEmpty()	O(1)
+
