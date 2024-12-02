@@ -86,3 +86,35 @@ class Solution {
        
     }
 }
+//chatgrp approach 
+
+public List<Integer> postorderTraversal(TreeNode root) {
+    List<Integer> postorder = new ArrayList<>();
+    if (root == null) return postorder;
+    
+    Stack<TreeNode> stack = new Stack<>();
+    TreeNode current = root;
+    TreeNode lastVisited = null;
+    
+    while (current != null || !stack.isEmpty()) {
+        // Traverse to the leftmost node
+        while (current != null) {
+            stack.push(current);
+            current = current.left;
+        }
+        
+        TreeNode peekNode = stack.peek();
+        
+        // If right child exists and hasn't been processed yet, move to right child
+        if (peekNode.right != null && lastVisited != peekNode.right) {
+            current = peekNode.right;
+        } else {
+            stack.pop();
+            postorder.add(peekNode.val); // Process the node
+            lastVisited = peekNode;
+        }
+    }
+    
+    return postorder;
+}
+
