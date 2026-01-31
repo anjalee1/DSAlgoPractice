@@ -3,79 +3,93 @@
 //ide: https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/
 //solution:https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/discuss/595226/JAVA-3ms-time-HashMap-bfs-queue
 
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+
 class Solution {
     
-    class Group{
-            TreeNode treeNode;
-            int row;
-            int col;
-            Group(TreeNode treeNode, int row, int col){
-                this.treeNode = treeNode;
-                this.row = row;
-                this.col = col;
-            }
-        }
-    
-    public List<List<Integer>> verticalTraversal(TreeNode root) {
-        List<List<Integer>> res = new ArrayList<>();        
-        if(root == null) {
-            return res;
-        }
-        
-        HashMap<Integer,List<Group>> colMap = new HashMap<>();
-        int minCol = Integer.MAX_VALUE;
-        int maxCol = Integer.MIN_VALUE;
-        
-        Queue<Group> q = new ArrayDeque<>();
-        q.add(new Group(root, 0 , 0));
-        
-        while(!q.isEmpty()) {
-            Group node = q.poll();
+    class Point {
+        TreeNode node;
+        int row; 
+        int col; 
 
-            int row = node.row;
-            int col = node.col;
-            
-            minCol = Math.min(minCol, col);
-            maxCol = Math.max(maxCol, col);
-            
-             colMap.putIfAbsent(node.col,new ArrayList<>());
-             colMap.get(node.col).add( node);
-            
-            if(node.treeNode.left != null) {
-                q.add(new Group(node.treeNode.left, row + 1, col-1 ));
-            }
-            
-            if(node.treeNode.right != null) {
-                q.add(new Group(node.treeNode.right, row + 1, col+1 ));
-            }
-            
-            
+        Point(TreeNode n, int r, int c) {
+            node = n;
+            row = r;
+            col = c;
         }
-        
+    }
+
+    public List<List<Integer>> verticalTraversal(TreeNode root) {
         List<List<Integer>> ans = new ArrayList<>();
-        for(int i = minCol ; i <=maxCol; i++ ) {
-            List<Group> list = colMap.get(i);            
-            Collections.sort(list, (a, b) -> {
-                if( a.row == b.row)   
-                    return a.treeNode.val - b.treeNode.val ;
-                else
-                    return a.row - b.row;
-            });
-            
-            List<Integer> values = new ArrayList<>();
-            
-            for(Group g: list) {
-                values.add(g.treeNode.val);
+        if (root == null) return ans;
+
+        List<Point> points = new ArrayList<>();
+        Queue<Point> q = new LinkedList<>();
+        
+        q.offer(new Point(root, 0, 0));
+
+        while (!q.isEmpty()) {
+            Point p = q.poll();
+            points.add(p); 
+
+            if (p.node.left != null) {
+                q.offer(new Point(p.node.left, p.row - 1, p.col + 1));
             }
-            
-            ans.add(values);
+            if (p.node.right != null) {
+                q.offer(new Point(p.node.right, p.row + 1, p.col + 1));
+            }
         }
-    
+
+        // Step 2: Global Sort - O(N log N)
+        // Sort by: Vertical Column (row) -> Level (col) -> Value
+        Collections.sort(points, (p1, p2) -> {
+            if (p1.row != p2.row) return p1.row - p2.row;
+            if (p1.col != p2.col) return p1.col - p2.col;
+            return p1.node.val - p2.node.val;
+        });
+
+        // Step 3: Group by Vertical Column (row) to build result
+        // Since it's sorted, we can just iterate through.
+        List<Integer> currentColumn = new ArrayList<>();
+        if (!points.isEmpty()) {
+            currentColumn.add(points.get(0).node.val);
+            
+            for (int i = 1; i < points.size(); i++) {
+                // If this node has a different 'row' than the previous, start a new list
+                if (points.get(i).row != points.get(i-1).row) {
+                    ans.add(currentColumn);
+                    currentColumn = new ArrayList<>();
+                }
+                currentColumn.add(points.get(i).node.val);
+            }
+            ans.add(currentColumn); // Add the last column
+        }
+
         return ans;
     }
 }
 
-
+//BFS Traversal (Queue Logic)You are performing a standard Breadth-First Search (BFS) using a Queue. Each node is visited exactly once and added to the points list.Time Complexity: $O(N)$2.
+ Global Sorting This is the most expensive part of your algorithm. You are using Collections.sort on a list containing all $N$ nodes.
+The comparator checks three conditions (column, row, and value), but each comparison is $O(1)$.
+Time Complexity: $O(N \log N)$3
+Grouping into Result ListYou iterate through the sorted points list exactly once to group nodes with the same row (vertical column) into the final List<List<Integer>>.
+Time Complexity: $O(N)$Total 
+Time ComplexityThe overall complexity is dominated by the sorting step:$$T(n) = O(N) + O(N \log N) + O(N) = \mathbf{O(N \log N)}$$
 
 
 
