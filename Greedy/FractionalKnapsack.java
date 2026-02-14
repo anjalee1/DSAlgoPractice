@@ -2,8 +2,9 @@
 //SOL:https://www.youtube.com/watch?v=F_DDzYnxO14&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=50
 //https://takeuforward.org/data-structure/fractional-knapsack-problem-greedy-approach/
 
-//Time Complexity: O(n log n + n). O(n log n) to sort the items and O(n) to iterate through all the items for calculating the answer.
-//Space Complexity: O(1), no additional data structure has been used.
+Complexity Analysis1. 
+	//Time Complexity: $O(N \log N)$Creating Objects: We iterate through the arrays once to create the Item objects. This takes $O(N)$.Sorting: This is the most expensive step. Sorting $N$ items takes $O(N \log N)$.Selection Loop: We iterate through the sorted items at most once. This takes $O(N)$.Total: The sorting dominates, so the overall complexity is $O(N \log N)$.2. 
+	//Space Complexity: $O(N)$We create a custom array of Item objects to store the values, weights, and ratios combined. This requires $O(N)$ auxiliary space.
 
 
 //{ Driver Code Starts
@@ -19,74 +20,38 @@ class Item {
     }
 }
 
-class GfG {
-    
-    public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int t = Integer.parseInt(br.readLine().trim());
-		while(t-->0){
-            String inputLine[] = br.readLine().trim().split(" ");
-            int n = Integer.parseInt(inputLine[0]);
-            int w = Integer.parseInt(inputLine[1]);
-            Item[] arr = new Item[n];
-            inputLine = br.readLine().trim().split(" ");
-            for(int i=0, k=0; i<n; i++){
-                arr[i] = new Item(Integer.parseInt(inputLine[k++]), Integer.parseInt(inputLine[k++]));
-            }
-            System.out.println(String.format("%.2f", new Solution().fractionalKnapsack(w, arr, n)));
-        }
-    }
-}
-// } Driver Code Ends
-
-
-/*
-class Item {
-    int value, weight;
-    Item(int x, int y){
-        this.value = x;
-        this.weight = y;
-    }
-}
-*/
-
-class itemComparator implements Comparator<Item>
-{
-    @Override
-    public int compare(Item a, Item b) 
-    {
-        double r1 = (double)(a.value) / (double)(a.weight); 
-        double r2 = (double)(b.value) / (double)(b.weight); 
-        if(r1 < r2) return 1; 
-        else if(r1 > r2) return -1; 
-        else return 0; 
+class Item{
+    int val;
+    int wt;
+    double ratio;
+    Item(int val,int wt){
+        this.val=val;
+        this.wt=wt;
+        this.ratio=(double)val/(double)wt;
     }
 }
 
-class Solution
-{
-    //Function to get the maximum total value in the knapsack.
-    double fractionalKnapsack(int W, Item arr[], int n) 
-    {
-        Arrays.sort(arr, new itemComparator()); 
-        
-        int curWeight = 0; 
-        double finalvalue = 0.0; 
-        
-        for (int i = 0; i < n; i++) {
+class Solution {
+    public double fractionalKnapsack(int[] val, int[] wt, int capacity) {
+       Item[] items= new Item[val.length];
        
-            if (curWeight + arr[i].weight <= W) {
-                curWeight += arr[i].weight;
-                finalvalue += arr[i].value;
-            }
-     
-            else {
-                int remain = W - curWeight;
-                finalvalue += ((double)arr[i].value / (double)arr[i].weight) * (double)remain;
-                break;
-            }
-        }
-     
-        return finalvalue;
+       for(int i=0;i<val.length;i++){
+          items[i] = new Item(val[i], wt[i]);
+       }
+       
+       Arrays.sort(items,(a,b)->Double.compare(b.ratio, a.ratio));
+       double value=0;
+       int currentCapacity=capacity;
+       for(int i=0;i<items.length;i++){
+           if(currentCapacity>=items[i].wt){
+               value+=items[i].val;
+               currentCapacity-= items[i].wt;
+           }
+           else{
+               value+=items[i].ratio * currentCapacity;
+               break;
+           }
+       }
+       return value;
     }
 }
