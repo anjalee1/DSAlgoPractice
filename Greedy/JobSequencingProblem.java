@@ -2,96 +2,81 @@
 //sol:https://www.youtube.com/watch?v=LjPx4wQaRIs&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=48
 //https://takeuforward.org/data-structure/job-sequencing-problem/
 
-//Time Complexity: O(N log N) + O(N*M).
-//O(N log N ) for sorting the jobs in decreasing order of profit. O(N*M) since we are iterating through all N jobs and for every job we are checking from the last deadline, say M deadlines in the worst case.
+//Time Complexity: O(N log N) 
+//O(N log N ) 
+Gemini said
+Here is the breakdown of the Time Complexity for the Priority Queue (Min-Heap) approach.
 
-//Space Complexity: O(M) for an array that keeps track on which day which job is performed if M is the maximum deadline available.
+The Short Answer
+The total time complexity is O(NlogN), where N is the number of jobs.
 
+The Detailed Breakdown
+The algorithm has two main parts:
 
-//{ Driver Code Starts
-import java.io.*;
-import java.lang.*;
+1. Sorting the Jobs
+Action: We sort the jobs array based on deadlines.
+
+Cost: Java's Arrays.sort or Collections.sort uses a variant of Merge Sort / TimSort.
+
+Complexity: O(NlogN)
+
+2. Iterating and Heap Operations
+We iterate through every job exactly once (N times). Inside this loop, we perform Heap operations.
+
+pq.add(profit): Inserting into a Min-Heap takes logarithmic time relative to the size of the heap. In the worst case, the heap holds all N jobs.
+
+Cost: O(logN)
+
+pq.poll(): Removing the minimum element also takes logarithmic time.
+
+Cost: O(logN)
+
+Since we do these operations inside a loop that runs N times:
+
+Loop Complexity: N×O(logN)=O(NlogN)
+
+Total Calculation
+Total Time=Sorting+Heap Loop
+Total Time=O(NlogN)+O(Nlog
+Space Complexity$O(N)$: We need space to store the list of jobs and the Priority Queue, which can hold up to $N$ elements. 
+	This is much safer than $O(\text{MaxDeadline})$ because deadlines can be huge numbers (e.g., $10^9$) even if $N$ is small.
+/// new code
 import java.util.*;
 
-class Job {
-    int id, profit, deadline;
-    Job(int x, int y, int z){
-        this.id = x;
-        this.deadline = y;
-        this.profit = z; 
-    }
-}
-
-class GfG {
-    public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        
-        //testcases
-		int t = Integer.parseInt(br.readLine().trim());
-		while(t-->0){
-            String inputLine[] = br.readLine().trim().split(" ");
-            
-            //size of array
-            int n = Integer.parseInt(inputLine[0]);
-            Job[] arr = new Job[n];
-            inputLine = br.readLine().trim().split(" ");
-            
-            //adding id, deadline, profit
-            for(int i=0, k=0; i<n; i++){
-                arr[i] = new Job(Integer.parseInt(inputLine[k++]), Integer.parseInt(inputLine[k++]), Integer.parseInt(inputLine[k++]));
-            }
-            
-            Solution ob = new Solution();
-            
-            //function call
-            int[] res = ob.JobScheduling(arr, n);
-            System.out.println (res[0] + " " + res[1]);
+class Solution {
+    public ArrayList<Integer> jobSequencing(int[] deadline, int[] profit) {
+        // 1. Create a simpler structure to hold jobs
+        int n = deadline.length;
+        List<int[]> jobs = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            jobs.add(new int[]{deadline[i], profit[i]});
         }
-    }
-}
-// } Driver Code Ends
 
+        // 2. Sort by DEADLINE in ASCENDING order
+        // Note: This is different from your previous approach!
+        Collections.sort(jobs, (a, b) -> a[0] - b[0]);
 
-class Solution
-{
-    //Function to find the maximum profit and the number of jobs done.
-    int[] JobScheduling(Job arr[], int n)
-    {
-        Arrays.sort(arr, (a, b) -> (b.profit - a.profit));
+        // 3. Use a Min-Heap to store profits of accepted jobs
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
 
-      int maxi = 0;
-      for (int i = 0; i < n; i++) {
-         if (arr[i].deadline > maxi) {
-            maxi = arr[i].deadline;
-         }
-      }
+        long totalProfit = 0; // Use long to prevent overflow (though int usually suffices here)
 
-      int result[] = new int[maxi + 1];
+        for (int[] job : jobs) {
+            int currentDeadline = job[0];
+            int currentProfit = job[1];
 
-      for (int i = 1; i <= maxi; i++) {
-         result[i] = -1;
-      }
+            // Add current job's profit to the heap
+            pq.add(currentProfit);
+            totalProfit += currentProfit;
 
-      int countJobs = 0, jobProfit = 0;
-
-      for (int i = 0; i < n; i++) {
-
-         for (int j = arr[i].deadline; j > 0; j--) {
-
-            // Free slot found 
-            if (result[j] == -1) {
-               result[j] = i;
-               countJobs++;
-               jobProfit += arr[i].profit;
-               break;
+            // If we have more jobs than the current deadline allows,
+            // remove the job with the SMALLEST profit (regret strategy)
+            if (pq.size() > currentDeadline) {
+                totalProfit -= pq.poll();
             }
-         }
-      }
+        }
 
-      int ans[] = new int[2];
-      ans[0] = countJobs;
-      ans[1] = jobProfit;
-      return ans;
+        // 4. Return count (heap size) and total profit
+        return new ArrayList<>(List.of(pq.size(), (int) totalProfit));
     }
 }
-
