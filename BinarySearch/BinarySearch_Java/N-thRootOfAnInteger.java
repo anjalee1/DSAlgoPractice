@@ -1,52 +1,42 @@
+class Solution {
+    public int nthRoot(int n, int m) {
+        // Handle m=0 or m=1 immediately
+        if (m == 0) return 0;
+        if (m == 1) return 1;
 
-import java.util.* ;
-import java.io.*; 
-public class Solution {
-    
-    public static double pow(double num,int p){
-        if (p==0){
-         return 1;
+        int low = 1;
+        int high = m;
+
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            int midN = func(mid, n, m);
+
+            if (midN == 1) {
+                return mid;
+            } else if (midN == 0) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
         }
-        else{
-            double pw=pow(num,p/2);
-            double pv=pw*pw;
-            if (p%2 ==1){
-                pv=pv*num;
-            }   
-           return pv;
-        }
+
+        return -1;
     }
-	public static double findNthRootOfM(int n, int m) {
-		double epsilon=1e-8;
-        double low,high;
-        
-        if(m >=0 && m<=1){
-           low =m;
-           high=1;
-        }
-        else{
-           low =1;
-           high=m;
-        }
-        
-        
-        while((high-low)>epsilon){
-            double mid =(low+high)/2.0;
-            if(pow(mid,n)<m){
-                low=mid;
-            }
-            else{
-                high=mid;
-            }
-        }
-        
-        return low;
+
+    private int func(int mid, int n, int m) {
+        long ans = 1;
+        for (int i = 1; i <= n; i++) {
+            ans = ans * mid;
             
-	}
+            if (ans > m) return 2; 
+        }
+        
+        if (ans == m) return 1;
+        return 0;
+    }
 }
 
 //When we will come out of the loop we will have the answer which will be equal to low as well as high.
-//tc: O( log( m * 10^d)*log(n) )
-//ide: https://www.codingninjas.com/codestudio/problems/1062679?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website&leftPanelTab=0
-//sol vid: https://www.youtube.com/watch?v=WjpswYrS2nY&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=63
-//code expln: https://www.geeksforgeeks.org/calculating-n-th-real-root-using-binary-search/
+//tc: O( n.log(m) ) sc:o(1)
+//ide: https://www.geeksforgeeks.org/problems/find-nth-root-of-m5843/1
+//sol vid: https://www.youtube.com/watch?v=rjEJeYCasHs&t=886s
